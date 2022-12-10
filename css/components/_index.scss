@@ -1,0 +1,88 @@
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+.header{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    max-height: 125px;
+    &__section{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: $primary--color;
+        padding: 10px;
+        &--icons{
+            margin-right: 5px;
+            text-decoration: none;;
+            color: white;
+            span:before{
+                font-size: 30px;
+            }
+        }
+    }
+    &__nav{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        &--logotipo{
+            margin-left: 10px;
+            img{
+                width: 150px;
+            }
+        }
+        &--texto{
+            justify-self: end;
+            font-size: 2rem;
+            margin-right: 30px;
+            text-decoration: underline;
+        }
+    }
+}
+
+.main{
+    width: 100vw;
+    height: calc(100vh - 125px);
+    background: url("../assets/img/Cover.png") no-repeat bottom/cover;
+    font-family: monospace,sans-serif;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    &__container{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &--title{
+            margin-top: 50px;
+            font-size: 5rem;
+            text-align: center;
+            letter-spacing: 10px;
+            font-weight: bold;
+            color: white;
+            min-height: 400px;
+            @include media(mobile-only){
+                margin-top: 150px;
+                font-size: 2.5rem;
+            }
+        }
+        &--link{
+            justify-self: flex-end;
+            width: 60%;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            @include media(mobile-only){
+                margin-top: auto;
+            }
+            button{
+                width: 100%;
+                padding: 10px;
+                border: none;
+                background-color: $primary--color;
+                font-weight: bold;
+                box-shadow: 10px 5px 5px black;
+            }
+        }
+    }
+}
